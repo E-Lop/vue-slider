@@ -62,4 +62,8 @@ var app = new Vue({
       this.currentElement = index;
     },
   },
+  // autoplay ogni 3 secondi al caricamento della pagina
+  mounted() {
+    setInterval(this.nextElement, 3000);
+  },
 });
