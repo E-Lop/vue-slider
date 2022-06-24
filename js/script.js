@@ -37,5 +37,20 @@ var app = new Vue({
       },
     ],
   },
-  methods: {},
+  methods: {
+    nextElement() {
+      if (this.currentElement < this.slides.length - 1) {
+        this.currentElement++;
+      } else {
+        this.currentElement = 0;
+      }
+    },
+    previousElement() {
+      if (this.currentElement > 0) {
+        this.currentElement--;
+      } else {
+        this.currentElement = this.slides.length - 1;
+      }
+    },
+  },
 });
