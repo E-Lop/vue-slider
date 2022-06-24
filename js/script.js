@@ -9,6 +9,7 @@ var app = new Vue({
   el: '#app',
   data: {
     currentElement: 0,
+    // currentActiveThumb: currentElement,
     slides: [
       {
         image: 'img/01.jpg',
@@ -38,16 +39,22 @@ var app = new Vue({
     ],
   },
   methods: {
+    // se l'indice dell'elemento corrente è minore della quantità di elementi nell'array,
+    // incremento l'indice
     nextElement() {
       if (this.currentElement < this.slides.length - 1) {
         this.currentElement++;
+        // altrimento lo faccio ricominciare da capo
       } else {
         this.currentElement = 0;
       }
     },
+    // se l'indice dell'elemento corrente è maggiore di zero,
+    // decremento l'indice
     previousElement() {
       if (this.currentElement > 0) {
         this.currentElement--;
+        // atrimenti lo faccio partire dall'ultimo elemento
       } else {
         this.currentElement = this.slides.length - 1;
       }
