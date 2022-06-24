@@ -9,7 +9,6 @@ var app = new Vue({
   el: '#app',
   data: {
     currentElement: 0,
-    // currentActiveThumb: currentElement,
     slides: [
       {
         image: 'img/01.jpg',

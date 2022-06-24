@@ -32,7 +32,7 @@
             <div
               v-for="(element, index) in slides"
               class="thumb"
-              :class="{'active': currentActiveThumb}"
+              :class="{'active': index === currentElement}"
             >
               <img :src="slides[index].image" alt="slides[index].title" />
             </div>
