@@ -9,6 +9,7 @@ var app = new Vue({
   el: '#app',
   data: {
     currentElement: 0,
+    autoPlayClock: null,
     slides: [
       {
         image: 'img/01.jpg',
@@ -58,12 +59,20 @@ var app = new Vue({
         this.currentElement = this.slides.length - 1;
       }
     },
+    // sovrascrive la variante flag con l'indice della thumbnail cliccata
     showThisThumbBig(index) {
       this.currentElement = index;
+    },
+    stopAutoPlay() {
+      clearInterval(this.autoPlayClock);
+      this.autoPlayClock = null;
+    },
+    startAutoplay() {
+      this.autoPlayClock = setInterval(this.nextElement, 3000);
     },
   },
   // autoplay ogni 3 secondi al caricamento della pagina
   mounted() {
-    setInterval(this.nextElement, 3000);
+    this.startAutoplay();
   },
 });

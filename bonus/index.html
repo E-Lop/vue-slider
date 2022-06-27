@@ -13,11 +13,16 @@
     <div id="app">
       <div class="container">
         <!-- ?? tabindex -->
-        <div class="slider-wrapper" tabindex="0">
+        <div
+          @mouseenter="stopAutoPlay()"
+          @mouseleave="startAutoplay()"
+          class="slider-wrapper"
+          tabindex="0"
+        >
           <div class="item">
             <img
               :src="slides[currentElement].image"
-              alt="slides[currentElement].title"
+              :alt="slides[currentElement].title"
             />
             <div class="text">
               <h3>{{slides[currentElement].title}}</h3>
